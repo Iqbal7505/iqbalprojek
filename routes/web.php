@@ -2,8 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AdminController;
+
+Route::get('/admin', [AdminController::class, 'create']);
+Route::post('/admin', [AdminController::class, 'store'])->name('admin.store');
 
 Route::get('/', [ProductController::class, 'index'])->name('home');;
 // Route untuk menampilkan daftar produk
