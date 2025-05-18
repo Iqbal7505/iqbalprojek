@@ -16,3 +16,18 @@ Route::get('/products/{id}', [ProductController::class, 'show'])->name('products
 Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
 Route::post('/contact', [ContactController::class,'store'])->name('contact.store');
 Route::resource('contact', ContactController::class);
+Route::get('/home', function () {
+    return view('home');
+});
+
+Route::get('/about', function () {
+    return view('about');
+});
+
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+Route::get('/gallery', function () {
+    return view('gallery');
+});
